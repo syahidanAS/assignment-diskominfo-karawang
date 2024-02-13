@@ -7,7 +7,7 @@
 6. php artisan db:seed --class=ScreeningsTableseeder
     php artisan db:seed --class=AccountSeeder
 7. php artisan serve
-8. Proyek ini menggunakan Vite untuk menjalankan migration, silahkan ketikkan perintah: npm run dev
+8. Proyek ini menggunakan Vite untuk menjalankan Tailwindcss, silahkan ketikkan perintah: npm install dan npm run dev
 
 **AKUN LOGIN**
 Emai: admin@labkesda.karawangkab.go.id
