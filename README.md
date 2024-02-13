@@ -5,6 +5,7 @@
 4. sesuaikan file .env
 5. php artisan migrate
 6. php artisan db:seed --class=ScreeningsTableseeder
+    php artisan db:seed --class=AccountSeeder
 7. php artisan serve
 8. Proyek ini menggunakan Vite untuk menjalankan migration, silahkan ketikkan perintah: npm run dev
 
