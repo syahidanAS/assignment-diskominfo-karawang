@@ -10,4 +10,5 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::group(['prefix'  => 'v1/customers'], function (){
     Route::get('/', [AdminController::class, 'getData'])->name('admin.customers');
+    Route::get('/{id}', [AdminController::class, 'getDataById']);
 });

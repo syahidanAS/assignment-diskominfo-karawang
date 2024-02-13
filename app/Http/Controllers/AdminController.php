@@ -59,4 +59,20 @@ class AdminController extends Controller
             ],500);
         }
     }
+
+    public function getDataById($id){
+        try{
+            $response = $this->customers->where('_id', $id)->first();
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Berhasil mendapatkan data',
+                'data' => $response
+            ],200);
+        }catch(Exception $error){
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Terjadi kesalahan!',
+            ],500);
+        }
+    }
 }

@@ -102,12 +102,34 @@
                         event_data += '<td class="border border-slate-300 text-slate-800 p-4">'+value.name+'</td>';
                         event_data += '<td class="border border-slate-300 text-slate-800 p-4">'+value.status+'</td>';
                         event_data += '<td class="border border-slate-300 text-slate-800 p-4">'+value.full_address+'</td>';
-                        event_data += '<td class="border border-slate-300 text-slate-800 p-4"><a class="cursor-pointer bg-yellow-600 p-2 rounded-md text-white hover:bg-yellow-700" href="#">Detail</a></td>';
+                        event_data += `<td class="border border-slate-300 text-slate-800 p-4"><a class="cursor-pointer bg-yellow-600 p-2 rounded-md text-white hover:bg-yellow-700" onClick="getId('${value._id}')">Detail</a></td>`;
                         event_data += '</tr class="border border-slate-300 text-slate-800 p-4">';
                     });
                     $("#customer_table").append(event_data);
                 },
-                error: function(d){
+                error: function(error){
+                    Swal.fire({
+                        position: "center",
+                        icon: "error",
+                        title: "Terjadi kesalahan saat memuat data!",
+                        showConfirmButton: false,
+                        timer: 1500
+                        });
+                }
+            });
+        }
+
+        function getId(value){
+            let APP_URL = {!! json_encode(url('/')) !!}
+            $.ajax({
+                url: `${APP_URL}/api/v1/customers/${value}`,
+                dataType: 'json',
+                type: 'get',
+                cache:false,
+                success: function(data){
+                    let event_data = '';
+                },
+                error: function(error){
                     Swal.fire({
                         position: "center",
                         icon: "error",
