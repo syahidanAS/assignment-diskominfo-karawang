@@ -95,7 +95,7 @@
     <script>
         function populateData(){
             let APP_URL = {!! json_encode(url('/')) !!}
-            $('#customer_table tbody').empty().append();
+            $('#customer_table body').html('');
             $.ajax({
                 url: `${APP_URL}/api/v1/customers`,
                 dataType: 'json',
