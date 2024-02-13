@@ -8,6 +8,12 @@
 7. php artisan serve
 8. Proyek ini menggunakan Vite untuk menjalankan migration, silahkan ketikkan perintah: npm run dev
 
+**AKUN LOGIN**
+Emai: admin@labkesda.karawangkab.go.id
+Password: password
+
 
 **MENGGUNAKAN API**
 GET Detail Data http://localhost:8000/api/v1/custmers/idclear
+
+
