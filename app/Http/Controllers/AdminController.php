@@ -27,20 +27,46 @@ class AdminController extends Controller
     }
     public function storeData(Request $request){
         try{
-            $this->customers->create([
-                'nik' => $request->nik,
-                'first_name' => $request->first_name,
-                'last_name' => $request->last_name,
-                'birth_date' => $request->birth_date,
-                'full_address' => $request->full_address,
-                'full_address' => $request->full_address,
-                'created_by' => 'xxx',
-                'screening_id' => $request->screening_id,
-                'status' => 'waiting'
-            ]);
-            return 'Berhasil';
+            if(!$request->_id){
+                $this->customers->create([
+                    'nik' => $request->nik,
+                    'first_name' => $request->first_name,
+                    'last_name' => $request->last_name,
+                    'birth_date' => $request->birth_date,
+                    'full_address' => $request->full_address,
+                    'full_address' => $request->full_address,
+                    'created_by' => 'xxx',
+                    'screening_id' => $request->screening_id,
+                    'status' => 'waiting'
+                ]);
+                return response()->json([
+                    'status' => 'success',
+                    'message' => 'Berhasil menyimpan data',
+                ],201);
+            }else{
+                $this->customers->where('_id', $request->_id)->update([
+                    'nik' => $request->nik,
+                    'first_name' => $request->first_name,
+                    'last_name' => $request->last_name,
+                    'birth_date' => $request->birth_date,
+                    'full_address' => $request->full_address,
+                    'full_address' => $request->full_address,
+                    'created_by' => 'xxx',
+                    'screening_id' => $request->screening_id,
+                    'status' => 'waiting'
+                ]);
+                return response()->json([
+                    'status' => 'success',
+                    'message' => 'Berhasil mengubah data',
+                ],201);
+            }
+
+
         }catch(Exception $error){
-            return $error;
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Terjadi kesalahan!',
+            ],500);
         }
     }
     public function getData(){

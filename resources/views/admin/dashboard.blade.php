@@ -19,6 +19,7 @@
                 <div class="flex justify-between">
                     <div>
                         <h2 class="text-lg font-bold text-slate-700">Histori Pendaftaran Pemeriksaan sampel</h2>
+                        <small class="text-blue-400">Catatan: Menyimpan dan Update data menggunakan tombol yang sama</small>
                     </div>
                 </div>
                 <form method="POST" id="formCustomer" action="{{ route('admin.customers') }}">
@@ -102,7 +103,7 @@
                         event_data += '<td class="border border-slate-300 text-slate-800 p-4">'+value.name+'</td>';
                         event_data += '<td class="border border-slate-300 text-slate-800 p-4">'+value.status+'</td>';
                         event_data += '<td class="border border-slate-300 text-slate-800 p-4">'+value.full_address+'</td>';
-                        event_data += `<td class="border border-slate-300 text-slate-800 p-4"><a class="cursor-pointer bg-yellow-600 p-2 rounded-md text-white hover:bg-yellow-700" onClick="getId('${value._id}')">Detail</a></td>`;
+                        event_data += `<td class="border border-slate-300 text-slate-800 p-4"><a class="cursor-pointer bg-yellow-600 p-2 rounded-md text-white hover:bg-yellow-700" onClick="getId('${value._id}')">Edit</a></td>`;
                         event_data += '</tr class="border border-slate-300 text-slate-800 p-4">';
                     });
                     $("#customer_table").append(event_data);
@@ -166,7 +167,7 @@
                     Swal.fire({
                         position: "center",
                         icon: "success",
-                        title: "Berhasil menyimpan data",
+                        title: response.message,
                         showConfirmButton: false,
                         timer: 1500
                         });
