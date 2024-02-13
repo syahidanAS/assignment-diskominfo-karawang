@@ -15,6 +15,6 @@ Password: password
 
 
 **MENGGUNAKAN API**
-GET Detail Data http://localhost:8000/api/v1/custmers/idclear
+GET Detail Data http://localhost:8000/api/v1/custmers/{id}
 
 
