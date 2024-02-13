@@ -18,8 +18,12 @@
             <div class="grid gap-4 mt-24 bg-white p-6 rounded-lg shadow-md shadow-slate-300">
                 <div class="flex justify-between">
                     <div>
-                        <h2 class="text-lg font-bold text-slate-700">Histori Pendaftaran Pemeriksaan sampel</h2>
+                        <h2 class="text-lg font-bold text-slate-700">Tambah/Ubah Pendaftaran Pemeriksaan sampel</h2>
                         <small class="text-blue-400">Catatan: Menyimpan dan Update data menggunakan tombol yang sama</small>
+                    </div>
+
+                    <div>
+                        <a class="bg-slate-300 p-2 text-slate-600 rounded-md" href="{{ route('logout') }}">Logout</a>
                     </div>
                 </div>
                 <form method="POST" id="formCustomer" action="{{ route('admin.customers') }}">
@@ -66,6 +70,10 @@
                     </div>
                 </form>
                 
+                <div>
+                    <h2 class="text-lg font-bold text-slate-700">Histori Pendaftaran Pemeriksaan sampel</h2>
+                    <small class="text-blue-400">Catatan: Menyimpan dan Update data menggunakan tombol yang sama</small>
+                </div>
                 <table id="customer_table" class="border-collapse border border-slate-500">
                     <thead class="bg-slate-200">
                         <tr>
