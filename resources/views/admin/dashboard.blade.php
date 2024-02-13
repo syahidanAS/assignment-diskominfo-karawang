@@ -126,8 +126,14 @@
                 dataType: 'json',
                 type: 'get',
                 cache:false,
-                success: function(data){
-                    let event_data = '';
+                success: function(response){
+                    $("#_id").val(response.data._id);
+                    $("#nik").val(response.data.nik);
+                    $("#first_name").val(response.data.first_name);
+                    $("#last_name").val(response.data.last_name);
+                    $("#birth_date").val(response.data.birth_date);
+                    $("#full_address").val(response.data.full_address);
+                    $("#screening_id").val(response.data.screening_id).change();
                 },
                 error: function(error){
                     Swal.fire({
