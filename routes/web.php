@@ -14,4 +14,6 @@ Route::group(['prefix'  => 'admin'], function (){
     Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
     Route::get('/screenings', [AdminController::class, 'getScreening'])->name('admin.screenings');
     Route::post('/customers', [AdminController::class, 'storeData'])->name('admin.customers');
+    Route::get('/export', [AdminController::class, 'exportToPdf'])->name('admin.export');
+
 });

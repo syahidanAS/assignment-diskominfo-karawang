@@ -10,4 +10,4 @@
 
 
 **MENGGUNAKAN API**
-GET Detail Data http://localhost:8000/api/v1/custmers/id
+GET Detail Data http://localhost:8000/api/v1/custmers/idclear

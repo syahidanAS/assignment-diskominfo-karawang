@@ -59,6 +59,7 @@
                     <div class="w-full flex justify-between">
                         <div></div>
                         <div>
+                            <a type="reset" class="text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center" href="{{ route('admin.export') }}">Export PDF</a>
                             <button type="reset" class="text-white bg-slate-600 hover:bg-slate-700 focus:ring-4 focus:outline-none focus:ring-slate-300 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Reset</button>
                             <button type="submit" class="text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Simpan Data</button>
                         </div>

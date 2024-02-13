@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CustomerRequest;
 use App\Models\Customer;
 use App\Models\Screening;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
@@ -100,5 +102,16 @@ class AdminController extends Controller
                 'message' => 'Terjadi kesalahan!',
             ],500);
         }
+    }
+
+    public function exportToPdf(){
+        $customers = $this->customers->selectRaw('customers.*, screenings.name')
+                    ->join('screenings', 'customers.screening_id', 'screenings._id')->get();
+
+        $pdf = PDF::loadView('pdf.customers', array('customers' =>  $customers))
+        ->setPaper('a4', 'portrait');
+    
+
+        return $pdf->download();
     }
 }
